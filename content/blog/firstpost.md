@@ -1,7 +1,8 @@
 ---
-title: This is my first post.
+title: This is my 1st post.
 description: This is a post on My Blog about agile frameworks.
 date: 2018-05-01
+draft: false
 tags:
   - another tag
 ---
@@ -24,3 +25,4 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
  // Test with a line break above this line.
  console.log('Test');
 ```
+
