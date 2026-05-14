@@ -17,7 +17,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm install
-      - run: npx @11ty/eleventy # Your build command
+      - run: npm run build # Your build command
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
