@@ -9,6 +9,8 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
+const isProduction = process.env.ELEVENTY_ENV === "production";
+const pathPrefix = isProduction ? "/eleventy-blog/" : "/";
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -92,6 +94,8 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addGlobalData("pathPrefix", pathPrefix);
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
@@ -134,6 +138,6 @@ module.exports = function(eleventyConfig) {
 		// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
 		// it will transform any absolute URLs in your HTML to include this
 		// folder name and does **not** affect where things go in the output folder.
-		pathPrefix: "/",
+		pathPrefix: pathPrefix,
 	};
 };
